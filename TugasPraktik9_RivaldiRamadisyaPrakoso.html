@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Praktik 9</title>
+    <script>
+        window.onload = function() {
+            var paragraf = document.getElementsByClassName("paragraf");
+            setInterval(function () {
+                paragraf[0].style.color = "red";
+                paragraf[1].style.color = "green";
+                paragraf[2].style.color = "blue";
+                setTimeout(function () {
+                    paragraf[0].style.color = "black";
+                    paragraf[1].style.color = "black";
+                    paragraf[2].style.color = "black";
+                }, 500);
+            }, 1000);
+        };
+    </script>
+</head>
+<body>
+    <center>
+        <h2 class="paragraf"><i>Biografi Gamelab</i></h2>
+        <h2 class="paragraf"><i>Selamat pagi semuanya...</i></h2>
+        <img src="https://www.gamelab.id/uploads/members/123269/photo-rivaldi-ramadisya-prakoso-20240121-082759.png" alt="Gambar Diri">
+        <p class="paragraf">Perkenalkan nama saya <b>Rivaldi Ramadisya Prakoso</b> sering dipanggil Valdi.
+        Saya lahir di Surabaya pada tanggal 31 Oktober 2003. Saya bersekolah dasar di SDN Kandangan 2 Surabaya lalu lulus dan diterima di SMPN 26 Surabaya. dan melanjutkan di SMAN 12 Surabaya. Dan kini saya berkuliah di Universitas Negeri Surabaya.</p>
+        <h4><i>Terima kasih...</i></h4>
+    </center>
+</body>
+</html>

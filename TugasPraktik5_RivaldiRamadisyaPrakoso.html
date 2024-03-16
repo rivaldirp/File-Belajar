@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <title>Praktik 5</title>
+    <script src="https://kit.fontawesome.com/91d51d03ee.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div class="navbar navbar-expand-sm navbar-dark bg-dark shadow-lg fixed-top">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto m-sm-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="tentang.html">TENTANG KAMI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="motivasi.html">MOTIVASI</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"> INFO BEASISWA </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="beadn.html">Dalam Negeri</a></li>
+                <li><a class="dropdown-item" href="bealn.html">Luar Negeri</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="komunitas.html">FORUM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faq.html">FAQ</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <a href="login.php">
+              <button class="btn btn-primary" type="button" >Login</button>
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+    <center>
+        <br><br><br>
+        <h2><i>Biografi Gamelab</i></h2>
+        <h2><i>Selamat pagi semuanya...</i></h2>
+        <img src="https://www.gamelab.id/uploads/members/123269/photo-rivaldi-ramadisya-prakoso-20240121-082759.png" alt="Gambar Diri">
+        <p>Perkenalkan nama saya <b>Rivaldi Ramadisya Prakoso</b> sering dipanggil Valdi.
+        Saya lahir di Surabaya pada tanggal 31 Oktober 2003. Saya bersekolah dasar di SDN Kandangan 2 Surabaya lalu lulus dan diterima di SMPN 26 Surabaya. dan melanjutkan di SMAN 12 Surabaya. Dan kini saya berkuliah di Universitas Negeri Surabaya.</p>
+        <h4><i>Terima kasih...</i></h4><br><br><br>
+        <h1><ins>Daftar Nilai Siswa SMK Gamelab</ins></h1><br><br>
+        <table border="2">
+            <tr>
+                <td bgcolor="yellow" rowspan="2"><center><b>Nama</b></center></td>
+                <td bgcolor="yellow" colspan="3"><center><b>Nilai</b></center></td>
+                <td style="width:35%" bgcolor="yellow" rowspan="2"><center><b>Aksi</b></center></td>
+            </tr>
+            <tr>
+                <td bgcolor="pink"><b>Kimia</b></td>
+                <td bgcolor="pink"><b>Fisika</b></td>
+                <td bgcolor="pink"><b>Biologi</b></td>
+            </tr>
+            <tr>
+                <td>Robby</td>
+                <td>76</td>
+                <td>80</td>
+                <td>81</td>
+                <td><button type="button" onclick="window.location.href = 'https://gamelab.id';">Link ke GameLab</button></td>
+            </tr>
+            <tr>
+                <td>Rendi</td>
+                <td>84</td>
+                <td>70</td>
+                <td>75</td>
+                <td><button type="button" onclick="window.location.href = 'https://gamelab.id';">Link ke GameLab</button></td>
+            </tr>
+            <tr>
+                <td>Alfian</td>
+                <td>96</td>
+                <td>70</td>
+                <td>71</td>
+                <td><button type="button" onclick="window.location.href = 'https://gamelab.id';">Link ke GameLab</button></td>
+            </tr>
+        </table><br><br><br>
+        <h1><ins>FORMULIR PENDAFTARAN</ins></h1>
+        <video width="320" height="160" controls>
+            <source src="https://youtu.be/cPkE0IbDVs4?si=DrA4QlDB90TbUvhV" type="video/mp4">
+        </video><br><br>
+        <canvas id="myCanvas" width="320" height="110" style="border:1px solid #000000;"></canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            var grd = ctx.createLinearGradient(0,0,250,0);
+            grd.addColorStop(0,"orange");
+            grd.addColorStop(1,"yellow");
+            ctx.fillStyle = grd;
+            ctx.fillRect(0, 0, 320, 110);
+            ctx.font = "30px Text New Roman";
+            ctx.strokeText("Educa Studio",75,65);
+        </script><br>
+        <form action="submit.php" method="post">
+            <table>
+                <tr>
+                    <td><label for="nama">Nama Lengkap</label></td>
+                    <td>:&nbsp;<input type="text" id="nama" name="nama"></td>
+                </tr>
+                <tr>
+                    <td><label label for="tempat">Tempat Lahir</label></td>
+                    <td>:&nbsp;<input type="text" id="tempat" name="tempat"></td>
+                </tr>
+                <tr>
+                    <td><label for="tanggal">Tanggal Lahir</label></td>
+                    <td>:&nbsp;<input type="date" id="tanggal" name="tanggal"></td>
+                </tr>
+                <tr>
+                    <td><label for="jenis_kelamin">Jenis Kelamin</label></td>
+                    <td>:&nbsp;<input type="radio" id="laki-laki" name="jenis_kelamin" value="laki-laki">
+                    <label for="laki-laki">Laki-laki</label>
+                    <input type="radio" id="perempuan" name="jenis_kelamin" value="perempuan">
+                    <label for="perempuan">Perempuan</label></td>
+                </tr>
+                <tr>
+                    <td><label for="alamat">Alamat</label></td>
+                    <td>:&nbsp;<textarea name="alamat" id="alamat" cols="23" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td>:&nbsp;<input type="email" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="nohp">No.Hp</label></td>
+                    <td>:&nbsp;<input type="text" id="nohp" name="nohp"></td>
+                </tr>
+                <tr>
+                    <td><label for="Kota">Kota</label></td>
+                    <td>:&nbsp;<select name="kota" id="kota">
+                        <option value="" disabled selected>*****Pilih Kota*****</option>
+                        <option value="surabaya">Surabaya</option>
+                        <option value="malang">Malang</option>
+                        <option value="gresik">Gresik</option>
+                        <option value="sidoarjo">Sidoarjo</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Simpan">&nbsp;<input type="submit" value="Batal"></td>
+                </tr>
+                </table>
+                
+        </form><br>
+    </center>
+  </body>
+</html>

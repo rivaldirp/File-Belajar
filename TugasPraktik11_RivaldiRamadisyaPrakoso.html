@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Praktik 11</title>
+</head>
+<body>
+    <h1>Web Storage</h1>
+    <hr>
+    <table class="frame">
+        <tr>
+            <td><label for="nama">Nama Lengkap</label></td>
+            <td>:&nbsp;<input type="text" id="nama" placeholder="Masukkan Nama..."></td>
+        </tr>
+        <tr>
+            <td><label for="alamat">Alamat</label></td>
+            <td>:&nbsp;<input type="text" id="alamat" placeholder="Masukkan Alamat...."></td>
+        </tr>
+        <tr>
+            <td><button onclick="simpan()">Simpan ke Session Storage</button></td>
+            <td><button onclick="hapus()">Hapus Session Storage</button></td>
+        </tr>
+    </table>
+    <script>
+        function simpan() {
+            const nama = document.getElementById('nama').value;
+            const alamat = document.getElementById('alamat').value;
+            sessionStorage.setItem('nama', nama);
+            sessionStorage.setItem('alamat',alamat);
+            displaySessionStorageData();
+        }
+        function hapus() {
+            sessionStorage.removeItem('nama');
+            sessionStorage.removeItem('alamat');
+            alert('Data berhasil dihapus dari Session Storage!!!');
+        }
+    
+    displayLocalStorageData();
+    displaySessionStorageData();
+    </script>
+    
+</body>
+</html>

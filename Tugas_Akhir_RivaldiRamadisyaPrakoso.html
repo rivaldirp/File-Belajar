@@ -1,0 +1,117 @@
+<html>
+<head>
+    <title>Tugas Akhir</title>
+</head>
+<body>
+    <div class="container">
+        <h3>RS. Game Lab Indonesia</h3>
+        <form action="" method="post" id="formPasien">
+            <label for="id">ID Pasien</label><br><br>
+            <input type="text" id="id" name="ID Pasien">&nbsp;&nbsp;&nbsp;<button type="button" onclick="searchData()">Search</button><br><br>
+            <label for="nama">Nama</label><br><br>
+            <input type="text" id="nama" name="nama"><br><br>
+            <label for="alamat">Alamat</label><br><br>
+            <input type="text" id="alamat" name="alamat"><br><br>
+            <label for="penyakit">Penyakit</label><br><br>
+            <input type="text" id="penyakit" name="penyakit"><br><br>
+            <label for="norung">Nomor Ruang</label><br><br>
+            <input type="text" id="norung" name="norung"><br><br>
+            <label for="bpjs">BPJS</label><br><br>
+                    <select name="bpjs" id="bpjs">
+                        <option value="Tidak Menggunakan">Tidak Menggunakan</option>
+                        <option value="Menggunakan">Kelas I</option>
+                        <option value="Menggunakan">Kelas II</option>
+                        <option value="Menggunakan">Kelas III</option>
+                    </select><br><br>
+            <label for="tglmas">Tanggal Masuk</label><br><br>
+            <input type="date" id="tglmas" name="tglmas"><br><br>
+            <label for="tglkel">Tanggal Keluar</label><br><br>
+            <input type="date" id="tglkel" name="tglkel"><br><br>
+            <button type="button" onclick="saveData()">Save</button>
+            <button type="button" onclick="showData()">Show</button>
+            <button type="button" onclick="deleteData()">Delete</button>
+        </form>
+        <div id="dataContainer">
+        </div>
+        <script>
+            var formDataArray = [];
+
+            function searchData() {
+    var idToSearch = document.getElementById('id').value;
+    var foundData = formDataArray.find(function(formData) {
+        return formData.id === idToSearch;
+    });
+
+    if (foundData) {
+        var dataContainer = document.getElementById('dataContainer');
+        var tableHTML = '<table border="1"><tr><th>ID Pasien</th><th>Nama</th><th>Alamat</th><th>Penyakit</th><th>Nomor Ruang</th><th>BPJS</th><th>Tanggal Masuk</th><th>Tanggal Keluar</th></tr>';
+
+        tableHTML += '<tr>';
+        tableHTML += '<td>' + foundData.id + '</td>';
+        tableHTML += '<td>' + foundData.nama + '</td>';
+        tableHTML += '<td>' + foundData.alamat + '</td>';
+        tableHTML += '<td>' + foundData.penyakit + '</td>';
+        tableHTML += '<td>' + foundData.norung + '</td>';
+        tableHTML += '<td>' + foundData.bpjs + '</td>';
+        tableHTML += '<td>' + foundData.tglmas + '</td>';
+        tableHTML += '<td>' + foundData.tglkel + '</td>';
+        tableHTML += '</tr>';
+
+        tableHTML += '</table>';
+        dataContainer.innerHTML = tableHTML;
+    } else {
+        alert('Data dengan ID tersebut tidak ditemukan.');
+    }
+}
+
+
+function saveData() {
+    var formData = {
+        id: document.getElementById('id').value,
+        nama: document.getElementById('nama').value,
+        alamat: document.getElementById('alamat').value,
+        penyakit: document.getElementById('penyakit').value,
+        norung: document.getElementById('norung').value,
+        bpjs: document.getElementById('bpjs').value,
+        tglmas: document.getElementById('tglmas').value,
+        tglkel: document.getElementById('tglkel').value
+    };
+
+    formDataArray.push(formData);
+    localStorage.setItem('formDataArray', JSON.stringify(formDataArray));
+}
+
+function showData() {
+    formDataArray = JSON.parse(localStorage.getItem('formDataArray')) || [];
+
+    var dataContainer = document.getElementById('dataContainer');
+    var tableHTML = '<table border="1"><tr><th>ID Pasien</th><th>Nama</th><th>Alamat</th><th>Penyakit</th><th>Nomor Ruang</th><th>BPJS</th><th>Tanggal Masuk</th><th>Tanggal Keluar</th></tr>';
+
+    formDataArray.forEach(function(formData) {
+        tableHTML += '<tr>';
+        tableHTML += '<td>' + formData.id + '</td>';
+        tableHTML += '<td>' + formData.nama + '</td>';
+        tableHTML += '<td>' + formData.alamat + '</td>';
+        tableHTML += '<td>' + formData.penyakit + '</td>';
+        tableHTML += '<td>' + formData.norung + '</td>';
+        tableHTML += '<td>' + formData.bpjs + '</td>';
+        tableHTML += '<td>' + formData.tglmas + '</td>';
+        tableHTML += '<td>' + formData.tglkel + '</td>';
+        tableHTML += '</tr>';
+    });
+
+    tableHTML += '</table>';
+    dataContainer.innerHTML = tableHTML;
+}
+
+function deleteData() {
+    var idToDelete = document.getElementById('id').value;
+    formDataArray = formDataArray.filter(function(formData) {
+        return formData.id !== idToDelete;
+    });
+    localStorage.setItem('formDataArray', JSON.stringify(formDataArray));
+}
+        </script>
+    </div>
+</body>
+</html>

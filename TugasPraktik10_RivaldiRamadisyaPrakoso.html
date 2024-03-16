@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>Praktik 10</title>
+    <style>
+        div{
+            margin-top: 10px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+        .bakar{
+            border: 1px solid black;
+            color: red;
+            font-size: small;
+            width: 240px;
+            padding: 13px;
+            text-align: center;
+            display: inline-block;
+            margin-right: 0px;
+        }
+        .bakar img{
+            width: 230px;
+        }
+        .bakar h4{
+            font-family: verdana;
+        }
+        .bakar button{
+            color: aliceblue;
+        }
+        .tabel {
+            display: none;
+        }
+    </style>
+    <script>
+        function detail(element) {
+            var tabel = element.querySelector('.tabel');
+            if (tabel.style.display === "none") {
+                tabel.style.display = "block";
+            } else {
+                tabel.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h2>PENERAPAN EVENT MOUSE</h2>
+        <h3><i>silahkan klik gambar-gambar dibawah</i></h3>
+        <div class="bakar" onclick="detail(this)">
+            <img src="https://upload.wikimedia.org/wikipedia/id/thumb/d/d5/Aang_.jpg/300px-Aang_.jpg" alt="Aang Kartun">
+            <h4>Klik Sekali</h4>
+            <div class="tabel">
+                <table border="1">
+                    <tr>
+                        <td>Penjelasan</td>
+                    </tr>
+                    <tr>
+                        <td>Aang adalah nama salah satu tokoh fiktif dalam serial animasi televisi Nickelodeon berjudul Avatar: The Legend of Aang. Pengisi suaranya adalah Zach Tyler Eisen. Sebagai tokoh utama, Aang selalu muncul dalam episode, kecuali satu, yaitu episode "Zuko Alone." Aang juga muncul dalam media lain, seperti misalnya kartu permainan, permainan video, T-shirt, dan komik web. Kebanyakan sifat-sifat Aang, seperti misalnya tidak makan daging, diambil dari tradisi agama Buddha dan Tao. Penciptanya ingin Aang tampil sebagai tokoh yang mengalahkan musuh dengan kebijaksanaan dan menjadi pahlawan cerdik.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="bakar" onmouseover="detail(this)">
+            <img src="https://thebadmoviedatabase.files.wordpress.com/2020/10/last-airbender.png" alt="Aang 2010">
+            <h4>Arahkan cursor kesini</h4>
+            <div class="tabel">
+                <table border="1">
+                    <tr>
+                        <td>Penjelasan</td>
+                    </tr>
+                    <tr>
+                        <td>The Last Airbender merupakan film fantasi yang di rilis tahun 2010. Film ini ditulis dan disutradarai oleh M. Night Shyamalan. Film ini merupakan film adaptasi dari serial televisi berjudul Avatar: The Last Airbender ciptaan Michael Dante DiMartino dan Bryan Konietzko yang dipengaruhi oleh kesenian di Asia, mitologi di Asia, dan beragam seni bela-diri. Rencana pertama dari sebuah trilogi: film, yang diperankan oleh Noah Ringer, Nicola Peltz, Jackson Rathbone, dan Dev Patel, dipasarkan dan dirilis oleh Paramount Pictures dan Nickelodeon Movies pada tanggal 1 Juli 2010.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="bakar" ondblclick="detail(this)">
+            <img src="https://akcdn.detik.net.id/visual/2023/06/19/avatar-the-last-airbender-2024-3_169.jpeg?w=650&q=90" alt="Aang 2024">
+            <h4>Klik 2x</h4>
+            <div class="tabel">
+                <table border="1">
+                    <tr>
+                        <td>Penjelasan</td>
+                    </tr>
+                    <tr>
+                        <td>Avatar: The Last Airbender (dikenal sebagai Avatar: The Legend of Aang) adalah sebuah serial televisi fantasi petualangan asal Amerika Serikat yang ditayangkan di Netflix. Serial ini merupakan adaptasi live-action dari serial televisi animasi dengan nama yang sama (2005–2008). Serial ini pertama kali diumumkan pada bulan September 2018. Albert Kim akan menjadi showrunner dengan pemeran ansambel yang terdiri dari Gordon Cormier, Dallas Liu, Kiawentiio, Ian Ousley, Paul Sun-Hyung Lee, Elizabeth Yu dan Daniel Dae Kim.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </center>
+</body>
+</html>

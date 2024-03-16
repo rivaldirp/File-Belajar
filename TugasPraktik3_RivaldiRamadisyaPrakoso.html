@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>Praktik 3</title>
+</head>
+<body>
+    <center>
+        <h1><ins>FORMULIR PENDAFTARAN</ins></h1>
+        <video width="320" height="160" controls>
+            <source src="https://youtu.be/cPkE0IbDVs4?si=DrA4QlDB90TbUvhV" type="video/mp4">
+        </video><br><br>
+        <canvas id="myCanvas" width="320" height="110" style="border:1px solid #000000;"></canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            var grd = ctx.createLinearGradient(0,0,250,0);
+            grd.addColorStop(0,"orange");
+            grd.addColorStop(1,"yellow");
+            ctx.fillStyle = grd;
+            ctx.fillRect(0, 0, 320, 110);
+            ctx.font = "30px Text New Roman";
+            ctx.strokeText("Educa Studio",75,65);
+        </script><br>
+        <form action="submit.php" method="post">
+            <table>
+                <tr>
+                    <td><label for="nama">Nama Lengkap</label></td>
+                    <td>:&nbsp;<input type="text" id="nama" name="nama"></td>
+                </tr>
+                <tr>
+                    <td><label label for="tempat">Tempat Lahir</label></td>
+                    <td>:&nbsp;<input type="text" id="tempat" name="tempat"></td>
+                </tr>
+                <tr>
+                    <td><label for="tanggal">Tanggal Lahir</label></td>
+                    <td>:&nbsp;<input type="date" id="tanggal" name="tanggal"></td>
+                </tr>
+                <tr>
+                    <td><label for="jenis_kelamin">Jenis Kelamin</label></td>
+                    <td>:&nbsp;<input type="radio" id="laki-laki" name="jenis_kelamin" value="laki-laki">
+                    <label for="laki-laki">Laki-laki</label>
+                    <input type="radio" id="perempuan" name="jenis_kelamin" value="perempuan">
+                    <label for="perempuan">Perempuan</label></td>
+                </tr>
+                <tr>
+                    <td><label for="alamat">Alamat</label></td>
+                    <td>:&nbsp;<textarea name="alamat" id="alamat" cols="23" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td>:&nbsp;<input type="email" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="nohp">No.Hp</label></td>
+                    <td>:&nbsp;<input type="text" id="nohp" name="nohp"></td>
+                </tr>
+                <tr>
+                    <td><label for="Kota">Kota</label></td>
+                    <td>:&nbsp;<select name="kota" id="kota">
+                        <option value="" disabled selected>*****Pilih Kota*****</option>
+                        <option value="surabaya">Surabaya</option>
+                        <option value="malang">Malang</option>
+                        <option value="gresik">Gresik</option>
+                        <option value="sidoarjo">Sidoarjo</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Simpan">&nbsp;<input type="submit" value="Batal"></td>
+                </tr>
+                </table>
+                
+        </form>
+    </center>
+</body>
+</html>
